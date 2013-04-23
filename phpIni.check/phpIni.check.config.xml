@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+	<!--
+		phpIni.check Configuration
+		Copyright (c)2010 Mike Duncan <mike.duncan@waitwha.com>
+			
+		<setting_name 
+			value="The correct value" 
+			level="INFO=0, WARNING=1, or ERROR=2" 
+			message="Message to display if VALUE is not satisfied." 
+			[ifSafeMode="true|false"]
+		/>
+	
+		- Possible values allowed include: true, false, non-blank, blank, an actual setting value.
+		- You can use a '$name$' in the message to display the name of the setting. 
+		-	You can use a '$value$' in the messag to display the value of the setting.
+	-->
+	
+	<register_globals value="false" level="2" message="Register globals is turned on." />
+	
+	<allow_url_fopen value="false" level="2" message="The function fopen is allowed to open remote files." />
+	<allow_url_include value="false" level="2" message="The functions include, include_once, require, and require_once are allowed to open remote files." />
+	
+	<safe_mode value="true" level="2" message="Safe Mode is currently turned off." />
+	<safe_mode_exec_dir value="non-blank" level="1" ifSafeMode="true" message="Because Safe Mode is on, this needs to be set to a directory of allowed exectuables for PHP." />
+	<safe_mode_gid value="non-blank" level="1" ifSafeMode="true" message="Because Safe Mode is on, this needs to be set to a value GID value for the system." />
+	
+	<expose_php value="true" level="1" message="PHP is exposing version information via the HTTP header X-Powered-By." />
+	
+	<display_errors value="false" level="1" message="Errors are displayed to the user by default." />
+	<log_errors value="true" level="1" message="Errors are not logged by default." />
+	<error_log value="non-blank" level="1" message="Errors are not logged to a valid log file." />
+	<display_startup_errors value="false" level="1" message="Startup error messages are sent to the end-user. You should turn this off unless you are debugging." />
+	
+	<post_max_size value="" level="0" message="Maximum POST size: $value$" />
+	<upload_max_filesize value="" level="0" message="Maximum size for an uploaded file: $value$" />
+	<include_path value="" level="0" message="Override on the PHP system path: $value$" />
+	<extension value="" level="0" message="Dynamically configured extension to be loaded: $value$" />
+	
+</configuration>
